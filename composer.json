@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "simonhamp/network",
+    "description": "A new kind of social network.",
+    "keywords": ["app", "laravel", "social network"],
     "license": "MIT",
     "type": "project",
     "require": {
