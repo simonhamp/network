@@ -54,7 +54,7 @@ class NetworkConfigCommand extends Command
             'It looks like you have already completed config for this network.
             Are you sure you want to configure again?',
             function () {
-                return $this->laravel['config']['app.key'] !== 'Laravel';
+                return $this->laravel['config']['app.name'] !== 'Laravel';
             }
         );
 
@@ -116,7 +116,6 @@ class NetworkConfigCommand extends Command
 
         return file_put_contents($this->laravel->environmentFilePath(), $env);
     }
-
 
     /**
      * Get a regex pattern that will match the appropriate env key.
