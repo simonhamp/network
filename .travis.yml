@@ -4,5 +4,5 @@ php:
   - '7.1'
 
 before_script:
-  - cp .env.test.example .env.testing
+  - cp .env.testing.example .env.testing
   - composer install --no-interaction
