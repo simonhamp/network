@@ -1,8 +1,9 @@
 language: php
 php:
-  - '7.0'
   - '7.1'
 
 before_script:
+  - sudo apt-get libzmq3-dev
+  - pecl install zmq-beta
   - cp .env.testing.example .env.testing
   - composer install --no-interaction
