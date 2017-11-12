@@ -4,6 +4,6 @@ php:
 
 before_script:
   - sudo apt-get install libzmq3-dev
-  - pecl install zmq-beta
+  - echo "" | sudo pecl install zmq-beta
   - cp .env.testing.example .env.testing
   - composer install --no-interaction
