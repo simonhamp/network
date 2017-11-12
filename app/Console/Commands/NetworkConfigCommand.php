@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
+use Symfony\Component\Process\Process;
 
 class NetworkConfigCommand extends Command
 {
@@ -67,32 +68,62 @@ class NetworkConfigCommand extends Command
         $this->url = $this->ask('What URL is your network accessible from?');
 
         $this->connection = $this->choice(
-            'Which database server are you using?',
+            'Which database connection are you using?',
             [
+                'sqlite' => 'SQLite',
                 'mysql' => 'MySQL',
                 'pgsql' => 'PostgreSQL',
                 'sqlsrv' => 'Microsoft SQL Server'
             ],
-            'mysql'
+            'sqlite'
         );
 
-        $this->host = $this->anticipate('What host is your database on?', ['localhost', '127.0.0.1']);
+        if ($this->connection !== 'sqlite') {
+            $this->host = $this->anticipate('What host is your database on?', ['localhost', '127.0.0.1']);
 
-        $this->port = $this->anticipate('What port is your database on?', ['3306']);
+            $this->port = $this->anticipate('What port is your database on?', ['3306']);
 
-        $this->database = $this->ask('What is the name of the database schema you wish to use?');
+            $this->database = $this->ask('What is the name of the database schema you wish to use?');
 
-        $this->username = $this->ask('What is the database username?');
+            $this->username = $this->ask('What is the database username?');
 
-        $this->password = $this->secret('What is the database password?');
+            $this->password = $this->secret('What is the database password?');
+        }
 
         if (! $this->updateEnvironmentFile()) {
+            $this->error(".env file couldn't be updated. Please edit manually.");
+
             return;
+        }
+
+        // Run migrations
+        if ($this->connection === 'sqlite') {
+            $this->createSqliteDatabase();
+
+            $this->call('migrate');
+        } else {
+            $this->warn("Create your database: {$this->database}");
+            $this->warn("Then run database migrations: Execute `php artisan migrate`");
         }
 
         $this->info("Network config complete. Enjoy!");
 
-        $this->line('<comment>Don\'t forget to create your database named '.$this->database.' and run `php artisan migrate`.</comment>');
+        $this->info("Now let's create your user account...");
+
+        $this->call('network:user');
+    }
+
+    protected function createSqliteDatabase()
+    {
+        $dbPath = database_path('database.sqlite');
+        $createDb = new Process("touch $dbPath");
+        $createDb->run();
+
+        if (! $createDb->isSuccessful()) {
+            $this->info("Database created at $dbPath.");
+        } else {
+            $this->info("Please create your database at $dbPath. Run `touch $dbPath`");
+        }
     }
 
     /**
@@ -106,6 +137,11 @@ class NetworkConfigCommand extends Command
         $env = file_get_contents($this->laravel->environmentFilePath());
 
         foreach ($this->keys as $key => $var) {
+            // Skip if it's not set
+            if (! isset($this->key)) {
+                continue;
+            }
+
             $env = preg_replace(
                 $this->keyReplacementPattern($key),
                 $key.'='.(is_string($this->$var) ? '"'.$this->$var.'"' : $this->$var),
