@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7975f657f3d94c4722d68e8e07304df",
+    "content-hash": "12d549d8ce8b57536e3ef5a5398a8c0c",
     "packages": [
         {
             "name": "askedio/laravel-ratchet",
@@ -1594,6 +1594,44 @@
                 "random"
             ],
             "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "pelim/laravel-zmq",
+            "version": "dev-laravel-5.5",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:simonhamp/laravel-zmq.git",
+                "reference": "3de455e3042de9e6c8c88231bb345384609b63b1"
+            },
+            "require": {
+                "ext-zmq": "*",
+                "illuminate/broadcasting": "5.5.*",
+                "illuminate/contracts": "5.5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pelim\\LaravelZmq\\ZmqServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pelim\\LaravelZmq\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "pelim",
+                    "email": "peter.limbach@gmail.com"
+                }
+            ],
+            "description": "zmq support for Laravel 5",
+            "time": "2017-11-09T18:14:25+00:00"
         },
         {
             "name": "psr/container",
@@ -4215,16 +4253,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.4.3",
+            "version": "6.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "06b28548fd2b4a20c3cd6e247dc86331a7d4db13"
+                "reference": "562f7dc75d46510a4ed5d16189ae57fbe45a9932"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/06b28548fd2b4a20c3cd6e247dc86331a7d4db13",
-                "reference": "06b28548fd2b4a20c3cd6e247dc86331a7d4db13",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/562f7dc75d46510a4ed5d16189ae57fbe45a9932",
+                "reference": "562f7dc75d46510a4ed5d16189ae57fbe45a9932",
                 "shasum": ""
             },
             "require": {
@@ -4295,7 +4333,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-10-16T13:18:59+00:00"
+            "time": "2017-11-08T11:26:09+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -5008,7 +5046,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pelim/laravel-zmq": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

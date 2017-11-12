@@ -30,6 +30,10 @@ return [
 
     'connections' => [
 
+        'zmq' => [
+            'driver' => 'zmq',
+        ],
+
         'pusher' => [
             'driver' => 'pusher',
             'key' => env('PUSHER_APP_KEY'),
