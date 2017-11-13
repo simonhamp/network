@@ -6,4 +6,4 @@ before_script:
   - sudo apt-get install libzmq3-dev
   - echo "" | pecl install zmq-beta
   - cp .env.testing.example .env.testing
-  - composer install --no-interaction
+  - composer install --no-interaction --prefer-source
