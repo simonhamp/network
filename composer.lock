@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "92d7c4a3e64f73f58fee1a96733e488d",
+    "content-hash": "9a9125b837f298db99af11f57ec81b65",
     "packages": [
         {
             "name": "askedio/laravel-ratchet",
@@ -2394,6 +2394,62 @@
                 "zmq"
             ],
             "time": "2014-05-25T17:54:51+00:00"
+        },
+        {
+            "name": "simonhamp/network-elements",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simonhamp/network-elements.git",
+                "reference": "73a620c36fe596baa2bc6d8577abde64abb190d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simonhamp/network-elements/zipball/73a620c36fe596baa2bc6d8577abde64abb190d0",
+                "reference": "73a620c36fe596baa2bc6d8577abde64abb190d0",
+                "shasum": ""
+            },
+            "require": {
+                "askedio/laravel-ratchet": "^2.0",
+                "fideloper/proxy": "~3.3",
+                "grimzy/laravel-mysql-spatial": "^1.0",
+                "hackzilla/password-generator": "^1.4",
+                "laravel/framework": "5.5.*",
+                "laravel/tinker": "~1.0",
+                "php": ">=7.0.0",
+                "vinkla/hashids": "^3.2"
+            },
+            "require-dev": {
+                "filp/whoops": "~2.0",
+                "fzaninotto/faker": "~1.4",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SimonHamp\\NetworkElements\\Providers\\NetworkServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SimonHamp\\NetworkElements\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Hamp",
+                    "homepage": "https://github.com/simonhamp"
+                }
+            ],
+            "description": "Network Elements. To make your Network work.",
+            "time": "2017-11-13T18:55:01+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5048,11 +5104,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "simonhamp/network-elements": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=7.0.0"
-    },
+    "platform": [],
     "platform-dev": []
 }
