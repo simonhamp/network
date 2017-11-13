@@ -1056,7 +1056,6 @@ if (token) {
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo_ratchet___default.a({
   broadcaster: 'ratchet',
   host: 'ws://0.0.0.0:8080'
-  //protocols: 'wamp',
 });
 
 /***/ }),
