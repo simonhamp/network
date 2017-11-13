@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "14d288928a70304c04c8c1048bfc2fe7",
+    "content-hash": "92d7c4a3e64f73f58fee1a96733e488d",
     "packages": [
         {
             "name": "askedio/laravel-ratchet",
             "version": "2.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:simonhamp/laravel-ratchet.git",
+                "url": "https://github.com/simonhamp/laravel-ratchet.git",
                 "reference": "d469482d11685bb32a5c6cdb289ecba97c3a2b2a"
             },
             "require": {
@@ -1602,7 +1602,7 @@
             "version": "v0.2.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:simonhamp/laravel-zmq.git",
+                "url": "https://github.com/simonhamp/laravel-zmq.git",
                 "reference": "9e2401464ba1d14ea20dffabc73aa221dd18ff7c"
             },
             "require": {
