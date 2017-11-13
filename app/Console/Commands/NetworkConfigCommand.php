@@ -10,7 +10,7 @@ class NetworkConfigCommand extends Command
 {
     use ConfirmableTrait;
 
-        /**
+    /**
      * The name and signature of the console command.
      *
      * @var string
