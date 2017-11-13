@@ -6,13 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "askedio/laravel-ratchet": "dev-laravel-5.5",
+        "askedio/laravel-ratchet": "^2.0",
         "fideloper/proxy": "~3.3",
         "grimzy/laravel-mysql-spatial": "^1.0",
         "hackzilla/password-generator": "^1.4",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "pelim/laravel-zmq": "dev-laravel-5.5",
         "vinkla/hashids": "^3.2"
     },
     "require-dev": {
