@@ -46,7 +46,6 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate",
-            "@php artisan make:auth",
             "@php artisan network:configure"
         ],
         "post-autoload-dump": [
