@@ -4,6 +4,18 @@
     "keywords": ["app", "laravel", "social network"],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Simon Hamp",
+            "homepage": "http://simonhamp.me",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/simonhamp/network/issues",
+        "wiki": "https://github.com/simonhamp/network/wiki",
+        "source": "https://github.com/simonhamp/network"
+    },
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
@@ -42,8 +54,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate",
-            "php artisan network:configure"
+            "@php artisan key:generate"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

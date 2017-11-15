@@ -15,7 +15,13 @@ The simplest way to install Network right now is via the command line:
 $ composer create-project simonhamp/network /path/to/install/to
 ```
 
-After the initial package has downloaded, the install process should kick-off automatically. It's a guided CLI installation that should be pretty easy to follow.
+After the initial package has downloaded, kick off the install process by running:
+
+```bash
+$ php artisan network:configure
+```
+
+It's a guided CLI installation so it should be pretty easy to follow.
 
 ## Updating
 
