@@ -1,7 +1,9 @@
 /node_modules
 /public/hot
+/public/network
 /public/storage
 /storage/*.key
+/storage/app/temp.env
 /vendor
 /.idea
 /.vagrant
