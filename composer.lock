@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c936be3a7bf6b4425f5871e42ffb59f",
+    "content-hash": "793fd086517319dac6f50a9b176f0362",
     "packages": [
         {
             "name": "askedio/laravel-ratchet",
@@ -2462,7 +2462,7 @@
                 }
             ],
             "description": "Network Elements. To make your Network work.",
-            "time": "2017-11-15T17:20:35+00:00"
+            "time": "2017-11-15T17:56:27+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5122,6 +5122,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0.0"
+    },
     "platform-dev": []
 }
