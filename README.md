@@ -7,6 +7,21 @@
 
 This is heavily WIP and there's really not much to see yet, but if you want to have a play feel free.
 
+## Requirements
+
+- PHP 7.1+
+- [ZeroMQ](http://zeromq.org/)
+- [ZeroMQ PHP extension](https://pecl.php.net/package/zmq)
+
+If you don't have ZeroMQ or the PHP extension installed (if you're not sure, you probably don't), you can install them via your package manager and PECL, for example using Homebrew on a Mac:
+
+```bash
+$ brew install zmq
+$ pecl install zmq-beta
+```
+
+To install ZeroMQ on other platforms, please check the [ZeroMQ docs](http://zeromq.org/intro:get-the-software).
+
 ## Installation
 
 The simplest way to install Network right now is via the command line:
@@ -15,7 +30,17 @@ The simplest way to install Network right now is via the command line:
 $ composer create-project simonhamp/network /path/to/install/to
 ```
 
-After the initial package has downloaded, kick off the install process by running:
+---
+
+**ALTERNATIVELY**: If you prefer to fork and clone this repo, you will need to install dependencies manually by running the following from the project's root:
+
+```bash
+$ composer install
+```
+
+---
+
+After all of the dependencies have downloaded, you can kick off the setup process by running:
 
 ```bash
 $ php artisan network:configure
